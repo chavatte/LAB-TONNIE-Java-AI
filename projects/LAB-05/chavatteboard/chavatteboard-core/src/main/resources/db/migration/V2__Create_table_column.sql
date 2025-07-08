@@ -1,0 +1,8 @@
+CREATE TABLE "column" (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    board_id INTEGER NOT NULL REFERENCES board(id),
+    name VARCHAR(255) NOT NULL,
+    "order" VARCHAR(50) NOT NULL,
+    type VARCHAR(50) NOT NULL CHECK (type IN ('INITIAL', 'PENDING', 'FINAL', 'CANCELED')),
+    UNIQUE (board_id, name)
+);
