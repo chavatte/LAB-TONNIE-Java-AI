@@ -1,0 +1,11 @@
+FROM mysql:latest
+
+WORKDIR /var/lib/mysql/
+
+ENV MYSQL_ROOT_PASSWORD=WK0o0IxI00z0mMqCs00cBdVXh0ev0WY0
+
+ENV MYSQL_DATABASE=feedback_app_db
+
+ADD feedback_app.sql /docker-entrypoint-initdb.d
+
+EXPOSE 3306
